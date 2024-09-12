@@ -1,0 +1,132 @@
+@use "base" as *;
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(3, auto);  
+    gap: 10px;
+    padding: 20px;
+    $darkItem: 1;
+    $darkPorcent: 20;
+
+    .color-box-text-white {
+        color: white;
+    }
+
+    .color-box-text-gray {
+        color: gray;
+    }
+    
+    @while $darkItem <=4 {
+        .box:nth-child(#{$darkItem}) {
+            padding: 1rem;
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            background-color: darken($color: $grid-item-base-color-red, $amount: $darkPorcent);
+
+        }
+
+        $darkPorcent: $darkPorcent - 5;
+        $darkItem: $darkItem + 1;
+    }
+
+    .box:nth-child(5) {
+        padding: 1rem;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        background-color: $grid-item-base-color-red;
+        $darkPorcent: 20;
+        $darkItem: $darkItem + 1;
+    }
+
+    $lightenItem: 6;
+    $lightenPorcent: 5;
+
+    @while $lightenItem <=9 {
+        .box:nth-child(#{$lightenItem}) {
+            padding: 1rem;
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            background-color: lighten($color: $grid-item-base-color-red, $amount: $lightenPorcent);
+
+        }
+
+        $lightenPorcent: $lightenPorcent + 5;
+        $lightenItem: $lightenItem + 1;
+    }
+
+
+    $darkPorcent: 20;
+    $darkItem: 10;
+    @while $darkItem <=14 {
+        .box:nth-child(#{$darkItem}) {
+            padding: 1rem;
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            background-color: darken($color: $grid-item-base-color-green, $amount: $darkPorcent);
+
+        }
+
+        $darkPorcent: $darkPorcent - 5;
+        $darkItem: $darkItem + 1;
+    }
+
+    .box:nth-child(15) {
+        padding: 1rem;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        background-color: $grid-item-base-color-green;
+    }
+
+    $lightenItem: 15;
+    $lightenPorcent:5;
+
+    @while $lightenItem <=18 {
+        .box:nth-child(#{$lightenItem}) {
+            padding: 1rem;
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            background-color: lighten($color: $grid-item-base-color-green, $amount: $lightenPorcent);
+        }
+        $lightenPorcent: $lightenPorcent + 5;
+        $lightenItem: $lightenItem + 1;
+    }
+
+    $darkPorcent: 20;
+    $darkItem: 19;
+    @while $darkItem <=22 {
+        .box:nth-child(#{$darkItem}) {
+            padding: 1rem;
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            background-color: darken($color: $grid-item-base-color-blue, $amount: $darkPorcent);
+
+        }
+
+        $darkPorcent: $darkPorcent - 5;
+        $darkItem: $darkItem + 1;
+    }
+
+    .box:nth-child(23) {
+        padding: 1rem;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        background-color: $grid-item-base-color-blue;
+    }
+
+    $lightenItem: 24;
+    $lightenPorcent:5;
+
+    @while $lightenItem <=28 {
+        .box:nth-child(#{$lightenItem}) {
+            padding: 1rem;
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            background-color: lighten($color: $grid-item-base-color-blue, $amount: $lightenPorcent);
+        }
+        $lightenPorcent: $lightenPorcent + 5;
+        $lightenItem: $lightenItem + 1;
+    }
+
+}
+

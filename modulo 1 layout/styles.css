@@ -1,0 +1,189 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 10px;
+  padding: 20px;
+}
+.container .color-box-text-white {
+  color: white;
+}
+.container .color-box-text-gray {
+  color: gray;
+}
+.container .box:nth-child(1) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #990000;
+}
+.container .box:nth-child(2) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #b30000;
+}
+.container .box:nth-child(3) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #cc0000;
+}
+.container .box:nth-child(4) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #e60000;
+}
+.container .box:nth-child(5) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: red;
+}
+.container .box:nth-child(6) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #ff1a1a;
+}
+.container .box:nth-child(7) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #ff3333;
+}
+.container .box:nth-child(8) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #ff4d4d;
+}
+.container .box:nth-child(9) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #ff6666;
+}
+.container .box:nth-child(10) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #001a00;
+}
+.container .box:nth-child(11) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #003400;
+}
+.container .box:nth-child(12) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #004d00;
+}
+.container .box:nth-child(13) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #006700;
+}
+.container .box:nth-child(14) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: green;
+}
+.container .box:nth-child(15) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: green;
+}
+.container .box:nth-child(15) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #009a00;
+}
+.container .box:nth-child(16) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #00b300;
+}
+.container .box:nth-child(17) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #00cd00;
+}
+.container .box:nth-child(18) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #00e600;
+}
+.container .box:nth-child(19) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #000099;
+}
+.container .box:nth-child(20) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #0000b3;
+}
+.container .box:nth-child(21) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #0000cc;
+}
+.container .box:nth-child(22) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #0000e6;
+}
+.container .box:nth-child(23) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: blue;
+}
+.container .box:nth-child(24) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #1a1aff;
+}
+.container .box:nth-child(25) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #3333ff;
+}
+.container .box:nth-child(26) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #4d4dff;
+}
+.container .box:nth-child(27) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #6666ff;
+}
+.container .box:nth-child(28) {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #8080ff;
+}
+
+/*# sourceMappingURL=styles.css.map */
