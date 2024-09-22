@@ -10,22 +10,22 @@
     background-color: $base; 
     align-items: center;
     justify-content: center;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow:$shadow-box
 
   }
  .square-important {
      width: 100px;
      height: 100px;
-     background-color: darkblue;        
+     background-color: $important;        
      align-items: center;
      justify-content: center;
-     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+     box-shadow: $shadow-box
    }
  .square-warning {
      width: 100px; 
      height: 100px; 
-     background-color: lightblue;
-     box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.5)
+     background-color: $warning;
+     box-shadow: $shadow-box
    }
 .text-square {
     text-align: center;
