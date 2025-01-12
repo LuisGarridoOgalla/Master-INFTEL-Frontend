@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": [
+    "defaults"
+  ],
+  "source": "src/index.html",
+  "scripts": {
+    "build": "rimraf dist && parcel build",
+    "start": "rimraf dist && parcel --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0",
+    "rimraf": "^6.0.1",
+    "sass": "^1.79.3"
+  }
+}
