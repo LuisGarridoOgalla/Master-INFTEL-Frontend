@@ -1,12 +1,15 @@
-import path from "path";
+import path, { resolve } from "path";
 import url from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 export default {
     context: path.resolve(__dirname, "src"),
+    resolve: {
+        extensions: [".js", ".ts"],
+    },
     entry: {
-        app: "./index.js",
+        app: "./index.ts",
         vedorSytle: ["../node_modules/bootstrap/dist/css/bootstrap.min.css"],
     },
     output: {
@@ -15,7 +18,7 @@ export default {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.ts$/,
                 exclude: /node_modules/,
                 loader: "babel-Loader",
             },
