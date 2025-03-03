@@ -5,6 +5,7 @@ import url from "url";
 import common from "./webpack.common.js";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import Dotenv from "dotenv-webpack";
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 export default merge(common, {
     mode:"production",
@@ -49,5 +50,8 @@ export default merge(common, {
         new MiniCssExtractPlugin ({
             filename: "[name].css"
         },),
+        new Dotenv({
+            path: './prod.env',
+       }),
     ],
 });
