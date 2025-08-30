@@ -9,8 +9,16 @@ interface MemberEntity {
   avatar_url: string;
   company: string;
 }
-
-export const ListPage: React.FC = () => {
+export const ListApp: React.FC = () => (
+  <InputProvider>
+    <Input />
+    <MembersProvider>
+      <ListPage />
+    </MembersProvider>
+    <Input />
+  </InputProvider>
+);
+ const ListPage: React.FC = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
 
   React.useEffect(() => {
@@ -20,13 +28,8 @@ export const ListPage: React.FC = () => {
   }, []);
 
   return (
-    <InputProvider>
-      <>
+    <>
         <h2>Hello from List page</h2>
-      </>
-      <Input />
-      <MembersProvider>
-      <>
         <div className="list-user-list-container">
           <span className="list-header">Avatar</span>
           <span className="list-header">Id</span>
@@ -41,8 +44,6 @@ export const ListPage: React.FC = () => {
         </div>
         <Link to="/detail">Navigate to detail page</Link>
       </>
-      </MembersProvider>
-    </InputProvider>
   );
 };
 const Input: React.FC = () => {

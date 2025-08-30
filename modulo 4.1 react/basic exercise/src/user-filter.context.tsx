@@ -7,7 +7,7 @@ interface InputContextModel {
 
 export const InputContext = React.createContext<InputContextModel | undefined>(undefined);
 export const InputProvider : React.FC<PropsWithChildren> = ({ children }) => {
-    const [inputValue, setInputValue] = React.useState<string>();    
+    const [inputValue, setInputValue] = React.useState<string>('');    
     return (
         <InputContext.Provider value={{ inputValue, setInputValue }}>
         {children}
