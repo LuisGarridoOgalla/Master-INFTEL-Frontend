@@ -20,13 +20,32 @@ const ListPage: React.FC = () => {
   const { inputValue } = React.useContext(InputContext);
 
   React.useEffect(() => {
-    const getData = setTimeout(() => {
-      fetch(`https://api.github.com/orgs/${inputValue}/members`)
-        .then((response) => response.json())
-        .then((json) => setMembers(json));
+    const getData = setTimeout(async () => {
+      try {
+        const response = await fetch(
+          `https://api.github.com/orgs/${inputValue}/members`
+        );
+
+        if (response.status === 404) {
+          setMembers([]); // Lista vacía para 404
+          return;
+        }
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+
+        const json = await response.json();
+        setMembers(json);
+      } catch (error) {
+        console.error("Error fetching members:", error);
+        setMembers([]);
+      }
     }, 2000);
+
     return () => clearTimeout(getData);
   }, [inputValue]);
+
   return (
     <>
       <h2>Hello from List page</h2>
