@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { InputContext } from "./user-filter.context";
 import { Input } from "./Input";
+import { pagination } from "./pagination-component";
 
 interface MemberEntity {
   id: string;
@@ -45,23 +46,43 @@ const ListPage: React.FC = () => {
 
     return () => clearTimeout(getData);
   }, [inputValue]);
-
+  const {
+    currentPage,
+    totalPages,
+    paginatedData,
+    goToPage,
+    nextPage,
+    prevPage,
+    hasNext,
+    hasPrev,
+  } = pagination(members, 10);
   return (
     <>
-      <h2>Hello from List page</h2>
-      <div className="list-user-list-container">
-        <span className="list-header">Avatar</span>
-        <span className="list-header">Id</span>
-        <span className="list-header">Name</span>
-        {members.map((member) => (
-          <React.Fragment key={member.id}>
-            <img src={member.avatar_url} alt={member.login} />
-            <span>{member.id}</span>
-            <Link to={`/detail/${member.login}`}>{member.login}</Link>
-          </React.Fragment>
-        ))}
+      <div>
+        <div className="list-user-list-container">
+          <span className="list-header">Avatar</span>
+          <span className="list-header">Id</span>
+          <span className="list-header">Name</span>
+          {paginatedData.map((member) => (
+            <React.Fragment key={member.id}>
+              <img src={member.avatar_url} alt={member.login} />
+              <span>{member.id}</span>
+              <Link to={`/detail/${member.login}`}>{member.login}</Link>
+            </React.Fragment>
+          ))}
+        </div>
+        <button onClick={prevPage} disabled={!hasPrev}>
+          Anterior
+        </button>
+
+        <span>
+          Página {currentPage} de {totalPages}
+        </span>
+
+        <button onClick={nextPage} disabled={!hasNext}>
+          Siguiente
+        </button>
       </div>
-      <Link to="/detail">Navigate to detail page</Link>
     </>
   );
 };
