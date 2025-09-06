@@ -1,0 +1,17 @@
+import React, {PropsWithChildren } from "react";
+
+interface InputContextModel {
+  inputValue: string;
+  setInputValue: (value: string) => void;
+}
+
+export const InputContext = React.createContext<InputContextModel | undefined>(undefined);
+export const InputProvider : React.FC<PropsWithChildren> = ({ children }) => {
+    const [inputValue, setInputValue] = React.useState<string>('lemoncode');    
+    return (
+        <InputContext.Provider value={{ inputValue, setInputValue }}>
+        {children}
+        </InputContext.Provider>
+    );
+
+};
