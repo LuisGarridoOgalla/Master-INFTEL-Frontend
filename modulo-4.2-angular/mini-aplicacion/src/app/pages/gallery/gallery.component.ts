@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './gallery.html',
   styleUrl: './gallery.scss',
 })
-export class Gallery {
+export class GalleryComponent {
 
 }
