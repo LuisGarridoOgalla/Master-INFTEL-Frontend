@@ -1,10 +1,8 @@
 <div class="app-container">
-  <app-public-header></app-public-header>
-  
-  <!-- Mostrando ambos menús para pruebas -->
-  <app-public-menu></app-public-menu>
-  <app-private-menu></app-private-menu>
-  
+  <app-public-header *ngIf="!(isLogged$ | async)"></app-public-header>
+  <app-private-header *ngIf="isLogged$ | async"></app-private-header>
+  <app-public-menu *ngIf="!(isLogged$ | async)"></app-public-menu>
+  <app-private-menu *ngIf="isLogged$ | async"></app-private-menu>
   <main class="main-content">
     <router-outlet></router-outlet>
   </main>
