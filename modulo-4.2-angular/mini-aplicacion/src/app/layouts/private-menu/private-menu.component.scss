@@ -1,0 +1,24 @@
+.menu {
+  background-color: #e8f5e9;
+  padding: 1rem;
+  border-bottom: 2px solid #4caf50;
+}
+
+.menu-title {
+  margin: 0 0 1rem 0;
+  color: #4caf50;
+  font-weight: 500;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  
+  a {
+    &.active {
+      background-color: #4caf50;
+      color: white;
+    }
+  }
+}
