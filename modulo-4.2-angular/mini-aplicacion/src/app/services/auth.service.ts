@@ -5,7 +5,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-
   constructor() {
     let savedUsername = '';
     let savedIsLogged = 'false';
@@ -50,5 +49,9 @@ export class AuthService {
 
   getUsername(): string {
     return this.usernameSubject.value;
+  }
+  ngOnDestroy(): void {
+    this.isLoggedSubject.complete();
+    this.usernameSubject.complete();
   }
 }
