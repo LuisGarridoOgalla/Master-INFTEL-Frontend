@@ -4,12 +4,13 @@ import { defineStore } from 'pinia'
 export const useMealStore = defineStore('meal', () => {
   const meals = ref([])
 
-  const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-  const mealTypes = [
+  const daysOfWeek = ref(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'])
+
+  const mealTypes = ref([
     { value: 'breakfast', label: '🌅 Breakfast' },
     { value: 'lunch', label: '🍽️ Lunch' },
     { value: 'dinner', label: '🌙 Dinner' }
-  ]
+  ])
 
   const favoritesMeals = computed(() => {
     return meals.value.filter((meal: any) => meal.isFavorite)
@@ -21,19 +22,42 @@ export const useMealStore = defineStore('meal', () => {
       meal.isFavorite = !meal.isFavorite
     }
   }
+
   const mealsByDay = computed(() => {
-    const groupedMeals: Record<string, any[]> = {}
-    daysOfWeek.forEach(day => {
-      groupedMeals[day] = meals.value.filter((meal: any) => meal.day === day)
+    const groupedMeals: Record<string, any> = {}
+
+    daysOfWeek.value.forEach(day => {
+      groupedMeals[day] = {
+        breakfast: meals.value.filter((meal: any) =>
+          meal.day === day && meal.mealType === 'breakfast'
+        ),
+        lunch: meals.value.filter((meal: any) =>
+          meal.day === day && meal.mealType === 'lunch'
+        ),
+        dinner: meals.value.filter((meal: any) =>
+          meal.day === day && meal.mealType === 'dinner'
+        )
+      }
     })
+
     return groupedMeals
   })
+  const daysWithMeals = computed(() => {
+    return daysOfWeek.value.filter(day => {
+      const dayMeals = mealsByDay.value[day]
+      return dayMeals.breakfast.length > 0 ||
+        dayMeals.lunch.length > 0 ||
+        dayMeals.dinner.length > 0
+    })
+  })
 
-  function addMeal(meal: { name: string; day: string }) {
+  function addMeal(meal: { name: string; day: string; mealType: string }) {
     const newMeal = {
       id: Date.now(),
       name: meal.name,
-      day: meal.day
+      day: meal.day,
+      mealType: meal.mealType,
+      isFavorite: false
     }
     meals.value.push(newMeal)
   }
@@ -42,7 +66,7 @@ export const useMealStore = defineStore('meal', () => {
     meals.value = meals.value.filter((meal: any) => meal.id !== mealId)
   }
 
-  function cleanMeals() {
+  function clearAllMeals() {
     meals.value = []
   }
 
@@ -52,9 +76,10 @@ export const useMealStore = defineStore('meal', () => {
     mealsByDay,
     addMeal,
     removeMeal,
-    cleanMeals,
+    clearAllMeals,
     favoritesMeals,
     mealTypes,
-    toggleFavorite
+    toggleFavorite,
+    daysWithMeals
   }
 })
