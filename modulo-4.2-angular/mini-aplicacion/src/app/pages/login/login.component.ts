@@ -15,7 +15,6 @@ import { Router } from '@angular/router';
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
-    MatIconModule,  
     MatButtonModule,
     MatIconModule,
     MatInputModule
