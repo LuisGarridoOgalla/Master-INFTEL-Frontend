@@ -23,6 +23,12 @@ export const useMealStore = defineStore('meal', () => {
     }
   }
 
+  function removeAllFavorites() {
+    meals.value.forEach(meal => {
+      meal.isFavorite = false
+    })
+  }
+
   const mealsByDay = computed(() => {
     const groupedMeals: Record<string, any> = {}
 
@@ -80,6 +86,7 @@ export const useMealStore = defineStore('meal', () => {
     favoritesMeals,
     mealTypes,
     toggleFavorite,
-    daysWithMeals
+    daysWithMeals,
+    removeAllFavorites
   }
 })

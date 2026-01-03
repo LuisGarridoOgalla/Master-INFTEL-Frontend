@@ -1,28 +1,21 @@
 <template>
   <div id="app">
-    <header class="app-header">
+    <NavBar />
+    <main class="main-content">
       <div class="container">
-        <h1>🍽️ Planificador de Comidas Semanal</h1>
-        <p class="subtitle">Organiza tus comidas de la semana de forma sencilla</p>
+        <router-view />
       </div>
-    </header>
-
-    <main class="container">
-      <MealForm />
-      <WeeklyView />
     </main>
-
     <footer class="app-footer">
       <div class="container">
-        <p>© 2024 Planificador de Comidas - Hecho con Vue 3 + Pinia</p>
+        <p>© 2026 Food planner - 3 + Pinia</p>
       </div>
     </footer>
   </div>
 </template>
 
 <script setup>
-import MealForm from './components/MealForm.vue'
-import WeeklyView from './views/WeeklyView.vue'
+import NavBar from './components/NavBar.vue'
 </script>
 
 <style>

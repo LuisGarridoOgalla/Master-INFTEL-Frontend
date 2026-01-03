@@ -1,8 +1,12 @@
 <template>
-  <div class="home-view">
+   <header class="app-header">
+      <div class="container">
+        <h1>🍽️ Meal weekly planner</h1>
+        <p class="subtitle">Manage your food for all week</p>
+      </div>
+    </header>
     <MealForm />
     <WeeklyView />
-  </div>
 </template>
 
 <script setup>
