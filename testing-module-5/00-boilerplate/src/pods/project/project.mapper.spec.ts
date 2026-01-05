@@ -10,8 +10,8 @@ describe('Project Mapper Specs', () => {
       name: 'Project One',
       isActive: true,
       employees: [
-        { id: 'emp1', employeeName: 'Alice', isAssigned: true },
-        { id: 'emp2', employeeName: 'Bob' },
+        { id: 'id1', employeeName: 'Alice', isAssigned: true },
+        { id: 'id2', employeeName: 'Bob' },
       ],
     };
 
@@ -24,8 +24,8 @@ describe('Project Mapper Specs', () => {
       name: 'Project One',
       isActive: true,
       employees: [
-        { id: 'emp1', employeeName: 'Alice', isAssigned: true },
-        { id: 'emp2', employeeName: 'Bob' },
+        { id: 'id1', employeeName: 'Alice', isAssigned: true },
+        { id: 'id2', employeeName: 'Bob' },
       ],
     };
     expect(result).toEqual(expectedResult);
