@@ -10,8 +10,8 @@ describe('Project Mapper Specs', () => {
       name: 'Project One',
       isActive: true,
       employees: [
-        { id: 'id1', employeeName: 'Alice', isAssigned: true },
-        { id: 'id2', employeeName: 'Bob' },
+        { id: 'id1', employeeName: 'Ana', isAssigned: true },
+        { id: 'id2', employeeName: 'Luis' },
       ],
     };
 
@@ -24,9 +24,25 @@ describe('Project Mapper Specs', () => {
       name: 'Project One',
       isActive: true,
       employees: [
-        { id: 'id1', employeeName: 'Alice', isAssigned: true },
-        { id: 'id2', employeeName: 'Bob' },
+        { id: 'id1', employeeName: 'Ana', isAssigned: true },
+        { id: 'id2', employeeName: 'Luis' },
       ],
+    };
+    expect(result).toEqual(expectedResult);
+
+  })
+  it('should map EmployeeSummary from API to entyProject', () => {
+    // Act
+    const result = mapProjectFromApiToVm(undefined);
+
+    // Assert
+    const expectedResult: viewModel.Project = {
+      id: '',
+      name: '',
+      externalId: '',
+      comments: '',
+      isActive: false,
+      employees: [],
     };
     expect(result).toEqual(expectedResult);
 
