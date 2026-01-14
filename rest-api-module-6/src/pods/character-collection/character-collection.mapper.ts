@@ -13,7 +13,7 @@ export const mapFromApiToVm = (
   origin: character.origin,
   location: character.location,
   image: character.image,
-  episodes: character.episodes,
+  episode: character.episodes,
   url: character.url,
   created: character.created,
 });

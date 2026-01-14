@@ -6,8 +6,16 @@ export interface Character {
   species: string;
   type: string;
   gender: string;
+  origin: {
+    name: string;
+    url: string;
+  };
+  location: {
+    name: string;
+    url: string;
+  };
   image: string;
-  episodes: string[];
+  episode: string[];
   url: string;
   created: string
 }
@@ -19,8 +27,16 @@ export const createEmptyHotel = (): Character => ({
   species: '',
   type: '',
   gender: '',
+  origin: {
+    name: '',
+    url: '',
+  },
+  location: {
+    name: '',
+    url: '',
+  },
   image: '',
-  episodes: [],
+  episode: undefined,
   url: '',
-  created: ''
+  created: '',
 });

@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { linkRoutes } from "#core/router";
 import { useCharacterCollection } from "./character-collection.hook";
 import { CharacterCollectionComponent } from "./character-collection.component";
 export const CharacterCollectionContainer = () => {
@@ -12,13 +11,8 @@ export const CharacterCollectionContainer = () => {
     loadCharacterCollection();
   }, []);
 
-  // const handleCreateCharacter = () => {
-  //   navigate(linkRoutes.createCharacter);
-  // };
-
   const handleEdit = (id: string) => {
-    // linkRoutes.editCharacter doesn't exist on LinkRoutes, navigate using a concrete path
-    navigate(`/characters/${id}/edit`);
+    navigate(`/characters/${id}`);
   };
 
   const handleDelete = async (id: string) => {
@@ -29,7 +23,6 @@ export const CharacterCollectionContainer = () => {
   return (
     <CharacterCollectionComponent
       characterCollection={characterCollection}
-      // onCreateCharacter={handleCreateCharacter}
       onEdit={handleEdit}
       onDelete={handleDelete}
     />

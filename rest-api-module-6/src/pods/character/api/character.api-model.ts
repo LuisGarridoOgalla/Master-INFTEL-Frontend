@@ -5,13 +5,16 @@ export interface Character {
   species: string;
   type: string;
   gender: string;
-  origin: object;
+  origin: {
+    name: string;
+    url: string;
+  };
   location: {
-    latitude: number;
-    longitude: number;
+    name: string;
+    url: string;
   };
   image: string;
-  episodes: string[];
+  episode: string[];
   url: string;
   created: string
 }

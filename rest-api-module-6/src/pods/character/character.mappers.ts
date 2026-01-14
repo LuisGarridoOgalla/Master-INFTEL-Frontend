@@ -12,22 +12,22 @@ export const mapCharacterFromApiToVm = (
   type: character.type,
   gender: character.gender,
   image: character.image,
-  episodes: character.episodes,
+  episode: character.episode,
   url: character.url,
   created: character.created,
 });
 
-export const mapCharacterFromVmToApi = (hotel: viewModel.Character): apiModel.Character =>
+export const mapCharacterFromVmToApi = (character: viewModel.Character): apiModel.Character =>
 (({
-  ...hotel,
-  id: hotel.id,
-  name: hotel.name,
-  status: hotel.status,
-  species: hotel.species,
-  type: hotel.type,
-  gender: hotel.gender,
-  image: hotel.image,
-  episodes: hotel.episodes,
-  url: hotel.url,
-  created: hotel.created,
+  ...character,
+  id: character.id,
+  name: character.name,
+  status: character.status,
+  species: character.species,
+  type: character.type,
+  gender: character.gender,
+  image: character.image,
+  episode: character.episode,
+  url: character.url,
+  created: character.created,
 } as unknown) as apiModel.Character);
