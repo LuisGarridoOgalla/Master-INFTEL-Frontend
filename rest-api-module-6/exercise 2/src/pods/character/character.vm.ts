@@ -17,10 +17,11 @@ export interface Character {
   image: string;
   episode: string[];
   url: string;
-  created: string
+  created: string;
+  bestSentence: string;
 }
 
-export const createEmptyHotel = (): Character => ({
+export const createEmptyCharacter = (): Character => ({
   id: '',
   name: '',
   status: '',
@@ -36,7 +37,8 @@ export const createEmptyHotel = (): Character => ({
     url: '',
   },
   image: '',
-  episode: undefined,
+  episode: [],
   url: '',
   created: '',
+  bestSentence: '',
 });
